@@ -90,3 +90,21 @@ function renderProducts(filteredProducts = products) {
 
 // Call the render function initially to display all products
 renderProducts();
+
+// Function to sort products
+function sortProducts() {
+    const sortOption = document.getElementById('sort').value;
+    let sortedProducts = [...products];  // Create a copy of the products array
+
+    if (sortOption === 'name-asc') {
+        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortOption === 'name-desc') {
+        sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (sortOption === 'price-asc') {
+        sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortOption === 'price-desc') {
+        sortedProducts.sort((a, b) => b.price - a.price);
+    }
+
+    renderProducts(sortedProducts);  // Render sorted products
+}
