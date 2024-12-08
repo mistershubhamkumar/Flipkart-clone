@@ -108,3 +108,14 @@ function sortProducts() {
 
     renderProducts(sortedProducts);  // Render sorted products
 }
+
+const products = [
+    { name: 'Product 1', price: 999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 2', price: 1499, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 3', price: 1999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 4', price: 1299, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 5', price: 2499, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 6', price: 3999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 7', price: 599, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 8', price: 799, image: 'https://via.placeholder.com/200' }
+];
