@@ -37,3 +37,27 @@ window.onload = () => {
     document.body.appendChild(cartMessage);
     updateCart();
 };
+const products = [
+    { name: 'Product 1', price: 999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 2', price: 1499, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 3', price: 1999, image: 'https://via.placeholder.com/200' }
+];
+
+function renderProducts() {
+    const productList = document.querySelector('.product-list');
+    productList.innerHTML = ''; // Clear existing products
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <button>Add to Cart</button>
+        `;
+        productList.appendChild(productCard);
+    });
+}
+
+// Call the render function
+renderProducts();
