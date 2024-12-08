@@ -119,3 +119,36 @@ const products = [
     { name: 'Product 7', price: 599, image: 'https://via.placeholder.com/200' },
     { name: 'Product 8', price: 799, image: 'https://via.placeholder.com/200' }
 ];
+const products = [
+    { name: 'Product 1', price: 999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 2', price: 1499, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 3', price: 1999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 4', price: 1299, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 5', price: 2499, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 6', price: 3999, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 7', price: 599, image: 'https://via.placeholder.com/200' },
+    { name: 'Product 8', price: 799, image: 'https://via.placeholder.com/200' }
+];
+
+// Function to display all products
+function renderProducts(products) {
+    const productList = document.getElementById('product-list'); 
+    productList.innerHTML = ''; // Clear previous products
+
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <button>Add to Cart</button>
+        `;
+
+        productList.appendChild(productCard);
+    });
+}
+
+// Call the render function to display all products on page load
+renderProducts(products);
