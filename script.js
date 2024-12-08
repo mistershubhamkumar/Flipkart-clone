@@ -61,3 +61,32 @@ function renderProducts() {
 
 // Call the render function
 renderProducts();
+// Function to search products
+function searchProducts() {
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const filteredProducts = products.filter(product => {
+        return product.name.toLowerCase().includes(searchInput);
+    });
+    renderProducts(filteredProducts);  // Render filtered products
+}
+
+// Update render function to accept a filtered list
+function renderProducts(filteredProducts = products) {
+    const productList = document.querySelector('.product-list');
+    productList.innerHTML = ''; 
+    // Clear existing products
+    filteredProducts.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <button>Add to Cart</button>
+        `;
+        productList.appendChild(productCard);
+    });
+}
+
+// Call the render function initially to display all products
+renderProducts();
